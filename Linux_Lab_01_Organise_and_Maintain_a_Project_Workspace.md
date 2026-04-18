@@ -42,23 +42,27 @@ In Linux, `mv` serves a dual purpose — it moves files between directories **an
 
 ## Setup — Create and Switch to devops User
 
-![[Pasted image 20260418134818.png]]
+<img width="652" height="341" alt="image" src="https://github.com/user-attachments/assets/75e86e59-85b7-43da-914d-ca91965192fb" />
+
 **Screenshot evidence (image1):** `sudo adduser devops` was run from `/opt/dev`. The interactive prompt filled in password and user info fields. The final confirmation `Is the information correct? [Y/n] y` completed user creation.
 
 ```bash
 sudo adduser devops
 ```
 
-![[Pasted image 20260418134838.png]]
+<img width="614" height="94" alt="image" src="https://github.com/user-attachments/assets/82c99f0f-62aa-4391-9ff6-3448123e0fb7" />
+
 **Screenshot evidence (image2):** `cat /etc/passwd | grep 'devops'` confirms the user was created successfully. The entry reads `devops:x:1002:1002:,,,:/home/devops:/bin/bash` — confirming UID 1002, home directory `/home/devops`, and default shell `/bin/bash`.
 
 ```bash
 cat /etc/passwd | grep 'devops'
 ```
 
-![[Pasted image 20260418134944.png]]
+<img width="272" height="91" alt="image" src="https://github.com/user-attachments/assets/556f4fb1-7049-49bd-808a-53b10748ebc4" />
 
-![[Pasted image 20260418135005.png]]
+
+<img width="400" height="173" alt="image" src="https://github.com/user-attachments/assets/3c766239-99da-463f-9a7d-39c8ec03c509" />
+
 **Screenshot evidence (image3 & image4):** The session was switched to the devops user. `whoami` confirms the identity as `devops`. `cd /home/devops/` navigates to the home directory, and the prompt changes to `(devops@kazukali)-[~]` confirming the switch.
 
 ```bash
@@ -73,7 +77,8 @@ cd /home/devops/  # Navigate to home directory
 
 ## Setup — Create Initial Workspace Structure
 
-![[Pasted image 20260418135208.png]]
+<img width="466" height="291" alt="image" src="https://github.com/user-attachments/assets/d871915c-ee79-4c18-af89-961d9928cf72" />
+
 **Screenshot evidence (image5):** `tree` run from `~/workspace` shows the full initial structure: `archive/`, `project_a/` (containing `config.json`, `draft.txt`, `notes.md`), and `project_b/` (containing `old_report.log` and `tempt.txt`).
 
 ```bash
@@ -90,7 +95,8 @@ tree
 
 ## Objective 1 — Create `backups` Directory
 
-![[Pasted image 20260418135340.png]]
+<img width="416" height="138" alt="image" src="https://github.com/user-attachments/assets/305cc5bb-ab42-4ce1-99c9-a60f1d947348" />
+
 **Screenshot evidence (image6):** `mkdir backups` was run from `~/workspace`. The subsequent `ls` confirms `backups` now appears alongside `archive`, `project_a`, and `project_b`.
 
 ```bash
@@ -102,7 +108,8 @@ ls
 
 ## Objective 2 — Create Log Files in `project_b`
 
-![[Pasted image 20260418135410.png]]
+<img width="520" height="139" alt="image" src="https://github.com/user-attachments/assets/6cbae8f0-0be0-4f1b-b20d-b24f4540b3ec" />
+
 **Screenshot evidence (image7):** `touch system.log error.log` was run from `~/workspace/project_b`. The subsequent `ls` confirms both `error.log` and `system.log` are now listed alongside `old_report.log` and `tempt.txt`.
 
 ```bash
@@ -117,7 +124,8 @@ ls
 
 ## Objective 3 — Copy `config.json` to `backups`
 
-![[Pasted image 20260418135508.png]]
+<img width="672" height="78" alt="image" src="https://github.com/user-attachments/assets/9d85d27b-4f89-4103-b6cd-46b72807f239" />
+
 **Screenshot evidence (image8):** `cp config.json /home/devops/workspace/backups/` was run from `~/workspace/project_a`. The absolute destination path was used to avoid ambiguity.
 
 ```bash
@@ -133,7 +141,8 @@ cp config.json /home/devops/workspace/backups/
 
 ## Objective 4 — Move `old_report.log` to `archive`
 
-![[Pasted image 20260418135608.png]]
+<img width="706" height="67" alt="image" src="https://github.com/user-attachments/assets/7caf144e-19c1-46d8-b3e4-4d2d5c026730" />
+
 **Screenshot evidence (image9):** `mv old_report.log /home/devops/workspace/archive/` was run from `~/workspace/project_b`. The absolute path ensures the file goes to the correct archive directory.
 
 ```bash
@@ -145,7 +154,8 @@ mv old_report.log /home/devops/workspace/archive/
 
 ## Objective 5 — Rename `draft.txt` to `final_draft.txt`
 
-![[Pasted image 20260418135651.png]]
+<img width="478" height="141" alt="image" src="https://github.com/user-attachments/assets/9a4ae23a-06ae-4f8d-bb1e-2570171f2da4" />
+
 **Screenshot evidence (image10):** `mv draft.txt final_draft.txt` was run from `~/workspace/project_a`. The subsequent `ls` confirms `final_draft.txt` is now listed alongside `config.json` and `notes.md`. `draft.txt` is gone.
 
 ```bash
@@ -163,7 +173,8 @@ ls
 
 ## Objective 6 — Delete `temp.txt`
 
-![[Pasted image 20260418135726.png]]
+<img width="613" height="175" alt="image" src="https://github.com/user-attachments/assets/a4f8a2a0-64a3-4729-9a3a-24266a0e8233" />
+
 **Screenshot evidence (image11):** `rm tempt.txt` was run from `~/workspace/project_b`. The subsequent `ls` shows only `error.log` and `system.log` — `tempt.txt` is gone, confirming successful deletion.
 
 ```bash
@@ -178,7 +189,8 @@ ls    # Verify temp.txt is gone
 
 ## Objective 7 — Verify Final Structure with `tree`
 
-![[Pasted image 20260418135902.png]]
+<img width="517" height="423" alt="image" src="https://github.com/user-attachments/assets/ef2fecbd-56a1-4020-af78-0344685b8e32" />
+
 **Screenshot evidence (image12):** `tree` run from `~/workspace` shows the final clean state:
 - `archive/old_report.log` ✅ — moved from project_b
 - `backups/config.json` ✅ — copied from project_a
@@ -195,7 +207,8 @@ tree
 
 ## Additional — Copy Multiple File Types with Wildcards
 
-![[Pasted image 20260418135939.png]]
+<img width="598" height="347" alt="image" src="https://github.com/user-attachments/assets/c5fbe2b8-4e65-4bcd-aa9e-ed052727f946" />
+
 **Screenshot evidence (image13):** `cp *.md *.json /home/devops/workspace/backups/` was run from `~/workspace/project_a`. The subsequent `tree` confirms `backups/` now contains both `config.json` and `notes.md` alongside the previously copied `config.json`.
 
 ```bash
