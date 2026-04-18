@@ -78,8 +78,10 @@ Without SGID, alice's files would belong to group `alice` by default, and bob co
 
 ### Create Users: alice, bob, carol
 
-![[Pasted image 20260418143706.png]]
-![[Pasted image 20260418143721.png]]
+<img width="489" height="120" alt="image" src="https://github.com/user-attachments/assets/52c4a3ee-88b3-4cc6-a4cc-4bd6ebbcce26" />
+
+<img width="488" height="65" alt="image" src="https://github.com/user-attachments/assets/e9f5330f-5b29-408d-83ed-4a3fb3be6509" />
+
 **Screenshot evidence (image1 & image2):** `cat /etc/passwd` shows the root entry format, then scrolled down the list to show `alice:x:1004:1004:,,,:/home/alice:/bin/bash`, `bob:x:1005:1005:,,,:/home/bob:/bin/bash`, and `carol:x:1006:1006:,,,:/home/carol:/bin/bash` — confirming all three users were created with home directories and bash shell.
 
 ```bash
@@ -91,7 +93,8 @@ cat /etc/passwd | tail -5    # Verify new entries
 
 ### Create Shared Directory Structure
 
-![[Pasted image 20260418143844.png]]
+<img width="408" height="179" alt="image" src="https://github.com/user-attachments/assets/1b72641c-6dfd-41d6-96c4-f3d179073484" />
+
 **Screenshot evidence (image3):** `tree` run from `/opt/shared` shows: `projects/` containing `backend/` and `frontend/` — 4 directories, 0 files.
 
 ```bash
@@ -106,14 +109,16 @@ tree /opt/shared
 
 ### Create `frontend` Group and Add alice + bob
 
-![[Pasted image 20260418143909.png]]
+<img width="340" height="78" alt="image" src="https://github.com/user-attachments/assets/2cbd2b0f-4fdb-465d-a9db-ba661e653532" />
+
 **Screenshot evidence (image4):** `sudo groupadd frontend` was run successfully (prompted for sudo password).
 
 ```bash
 sudo groupadd frontend
 ```
 
-![[Pasted image 20260418143932.png]]
+<img width="756" height="59" alt="image" src="https://github.com/user-attachments/assets/f2e037c2-8ae2-48ea-bd49-2ef637b6c96c" />
+
 **Screenshot evidence (image5):** `sudo usermod -aG frontend alice && sudo usermod -aG frontend bob` adds both users to `frontend` in a single chained command.
 
 ```bash
@@ -125,8 +130,10 @@ sudo usermod -aG frontend bob
 
 ### Create `backend` Group and Add carol
 
-![[Pasted image 20260418144054.png]]
-![[Pasted image 20260418144106.png]]
+<img width="298" height="54" alt="image" src="https://github.com/user-attachments/assets/46d71107-c4db-4b34-995d-45403a9cd5e7" />
+
+<img width="484" height="72" alt="image" src="https://github.com/user-attachments/assets/5e30a99e-01cc-4782-b274-078adb0a53fd" />
+
 **Screenshot evidence (image6 & image7):** `sudo groupadd backend` and `sudo usermod -aG backend carol` create the group and assign carol.
 
 ```bash
@@ -136,7 +143,8 @@ sudo usermod -aG backend carol
 
 ### Verify Group Assignments
 
-![[Pasted image 20260418144128.png]]
+<img width="633" height="145" alt="image" src="https://github.com/user-attachments/assets/6fc14ae0-d90a-4c37-b669-cdf70ffc7a1a" />
+
 **Screenshot evidence (image8):** `groups alice && groups bob && groups carol` shows:
 - `alice : alice users frontend` ✅
 - `bob : bob users frontend` ✅
@@ -150,10 +158,12 @@ groups alice && groups bob && groups carol
 
 ## Step 2 — Change Group Ownership with `chgrp`
 
-![[Pasted image 20260418144204.png]]
+<img width="748" height="158" alt="image" src="https://github.com/user-attachments/assets/6898e3d8-d955-4232-835b-93850fd4d5ce" />
+
 **Screenshot evidence (image9):** Before `chgrp`, `ls -ld /opt/shared/projects/frontend` shows `drwxr-xr-x 2 root root` — both directories still belong to group `root`.
 
-![[Pasted image 20260418144229.png]]
+<img width="1056" height="71" alt="image" src="https://github.com/user-attachments/assets/bd907790-dcb3-47dd-8eb5-89fb72d5ee41" />
+
 **Screenshot evidence (image10):** `sudo chgrp frontend /opt/shared/projects/frontend && sudo chgrp backend /opt/shared/projects/backend` updates group ownership.
 
 ```bash
@@ -161,14 +171,16 @@ sudo chgrp frontend /opt/shared/projects/frontend
 sudo chgrp backend  /opt/shared/projects/backend
 ```
 
-![[Pasted image 20260418144307.png]]
+<img width="785" height="160" alt="image" src="https://github.com/user-attachments/assets/d60f9a00-fc65-4a43-98a9-cd37995e7be6" />
+
 **Screenshot evidence (image11):** After `chgrp`, `ls -ld` now shows `drwxr-xr-x 2 root frontend` and `drwxr-xr-x 2 root backend` — group ownership updated correctly (highlighted in red).
 
 ---
 
 ## Step 3 — Set Permissions with `chmod 770`
 
-![[Pasted image 20260418144344.png]]
+<img width="985" height="53" alt="image" src="https://github.com/user-attachments/assets/cb8fed67-568c-4ed4-8554-559e7de7c972" />
+
 **Screenshot evidence (image12):** `sudo chmod 770 /opt/shared/projects/frontend && sudo chmod 770 /opt/shared/projects/backend` sets permissions for both directories in one command.
 
 ```bash
@@ -176,7 +188,8 @@ sudo chmod 770 /opt/shared/projects/frontend
 sudo chmod 770 /opt/shared/projects/backend
 ```
 
-![[Pasted image 20260418144406.png]]
+<img width="771" height="154" alt="image" src="https://github.com/user-attachments/assets/dfa51525-ae10-4379-97bc-b920def97148" />
+
 **Screenshot evidence (image13):** `ls -ld` now shows `drwxrwx---` for both directories (highlighted in red):
 - Owner (root): `rwx`
 - Group (frontend/backend): `rwx`
@@ -195,7 +208,8 @@ This means alice and bob can fully access `frontend/`, carol can fully access `b
 
 ## Step 4 — Set SGID with `chmod 2770`
 
-![[Pasted image 20260418144800.png]]
+<img width="1003" height="59" alt="image" src="https://github.com/user-attachments/assets/a8ee46c6-8659-4c4e-9686-30f7235b68d8" />
+
 **Screenshot evidence (image14):** `sudo chmod 2770 /opt/shared/projects/frontend && sudo chmod 2770 /opt/shared/projects/backend` sets the SGID bit on both directories.
 
 ```bash
@@ -211,7 +225,8 @@ The `2` prefix sets the SGID bit. Combined with `770`, any new file created insi
 
 ### Test 1: Alice can access and create files in `frontend/`
 
-![[Pasted image 20260418144904.png]]
+<img width="569" height="256" alt="image" src="https://github.com/user-attachments/assets/c5c4de42-6f81-4c00-8f0a-267e46484cc6" />
+
 **Screenshot evidence (image15):** `su - alice`, then `cd /opt/shared/projects/frontend/`, then `touch frontend.txt` — all succeed. Alice has full access to her team's directory.
 
 ```bash
@@ -222,7 +237,8 @@ touch frontend.txt    # Success
 
 ### Test 2: Alice cannot access `backend/`
 
-![[Pasted image 20260418144928.png]]
+<img width="623" height="76" alt="image" src="https://github.com/user-attachments/assets/461f6dd5-c756-49a9-b330-819d78d56854" />
+
 **Screenshot evidence (image16):** From alice's session, `cd /opt/shared/projects/backend` returns `-bash: cd: /opt/shared/projects/backend: Permission denied` ✅
 
 ```bash
@@ -231,7 +247,8 @@ cd /opt/shared/projects/backend    # Permission denied — expected
 
 ### Test 3: Bob can access and create files in `frontend/`
 
-![[Pasted image 20260418144953.png]]
+<img width="539" height="171" alt="image" src="https://github.com/user-attachments/assets/53672531-c4ec-4923-96eb-ee69eaf77ba8" />
+
 **Screenshot evidence (image17):** `su - bob` (from alice's session), `cd /opt/shared/projects/frontend/`, `touch bob_frontend.txt` — all succeed.
 
 ```bash
@@ -242,12 +259,14 @@ touch bob_frontend.txt    # Success
 
 ### Test 4: Bob cannot access `backend/`
 
-![[Pasted image 20260418145206.png]]
+<img width="625" height="75" alt="image" src="https://github.com/user-attachments/assets/a733352e-b754-4c5b-9acc-f9e4a92821ad" />
+
 **Screenshot evidence (image18):** `cd /opt/shared/projects/backend/` returns `Permission denied` ✅
 
 ### Test 5: Carol can access and create files in `backend/`
 
-![[Pasted image 20260418145226.png]]
+<img width="706" height="216" alt="image" src="https://github.com/user-attachments/assets/5ffd101b-b774-4bf4-b245-902ac2059e81" />
+
 **Screenshot evidence (image19):** `su - carol`, `cd /opt/shared/projects/backend/`, `touch backend.txt` — all succeed.
 
 ```bash
@@ -258,12 +277,14 @@ touch backend.txt    # Success
 
 ### Test 6: Carol cannot access `frontend/`
 
-![[Pasted image 20260418145246.png]]
+<img width="631" height="76" alt="image" src="https://github.com/user-attachments/assets/be494af3-cbfa-4e49-8e49-13f167686807" />
+
 **Screenshot evidence (image20):** `cd /opt/shared/projects/frontend/` returns `Permission denied` ✅
 
 ### Test 7: Bob can write into alice's file (SGID in action)
 
-![[Pasted image 20260418145333.png]]
+<img width="808" height="345" alt="image" src="https://github.com/user-attachments/assets/3eeaebea-3b9d-4049-8b52-a83476e02828" />
+
 **Screenshot evidence (image21):** From bob's session, `ls` shows both `bob_frontend.txt` and `frontend.txt`. `echo "I can write in alice's file" >> frontend.txt` succeeds. `cat frontend.txt` confirms the content was written. This works because SGID ensures `frontend.txt` belongs to group `frontend`, and bob is a member.
 
 ```bash
@@ -273,7 +294,8 @@ cat frontend.txt    # Output: I can write in alice's file
 
 ### Verify File Ownership with SGID
 
-![[Pasted image 20260418145429.png]]
+<img width="653" height="129" alt="image" src="https://github.com/user-attachments/assets/814128db-66ab-48f5-8162-1ffe97d4aa54" />
+
 **Screenshot evidence (image22):** `ls -lh` from alice's session inside `frontend/` shows:
 - `bob_frontend.txt` — owner: `bob`, group: `frontend` ✅
 - `frontend.txt` — owner: `alice`, group: `frontend` ✅
@@ -283,7 +305,8 @@ All files belong to group `frontend` regardless of who created them — SGID is 
 
 ### Confirm with `getfacl`
 
-![[Pasted image 20260418145536.png]]
+<img width="548" height="171" alt="image" src="https://github.com/user-attachments/assets/7fdcc2e6-443a-41be-b545-0933db3e2469" />
+
 **Screenshot evidence (image23):** `getfacl frontend.txt` from bob's session shows:
 ```
 # file: frontend.txt
