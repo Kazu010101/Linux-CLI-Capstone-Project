@@ -10,7 +10,7 @@
 
 | # | Lab | Key Skills |
 |---|-----|-----------|
-| 01 | [Organise and Maintain a Project Workspace](#-lab-01--organise-and-maintain-a-project-workspace) | File/directory management, Linux paths |
+| 01 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_01_Organise_and_Maintain_a_Project_Workspace.md">Organise and Maintain a Project Workspace</a> | File/directory management, Linux paths |
 | 02 | [Investigate and Respond to a Disk Space Alert](#-lab-02--investigate-and-respond-to-a-disk-space-alert) | Disk monitoring, archiving, cron |
 | 03 | [Secure Multi-User Collaboration Environment](#-lab-03--secure-multi-user-collaboration-environment) | chmod, SGID, group-based access control |
 | 04 | [Network Diagnostics and Firewall Recovery](#-lab-04--network-diagnostics-and-firewall-recovery) | OSI triage, ufw, iptables |
