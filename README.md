@@ -12,7 +12,7 @@
 |---|-----|-----------|
 | 01 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_01_Organise_and_Maintain_a_Project_Workspace.md">Organise and Maintain a Project Workspace</a> | File/directory management, Linux paths |
 | 02 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_02_Investigate_and_Respond_to_a_Disk_Space_Alert.md">Investigate and Respond to a Disk Space Alert| Disk monitoring, archiving, cron |
-| 03 | [Secure Multi-User Collaboration Environment](#-lab-03--secure-multi-user-collaboration-environment) | chmod, SGID, group-based access control |
+| 03 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_03_Secure_Multi-User_Collaboration_Environment.md">Secure Multi User Collaboration Environment | chmod, SGID, group-based access control |
 | 04 | [Network Diagnostics and Firewall Recovery](#-lab-04--network-diagnostics-and-firewall-recovery) | OSI triage, ufw, iptables |
 | 05 | [Bash Scripting for Automation](#-lab-05--bash-scripting-for-automation) | Bash scripting, error handling, crontab | 
 
