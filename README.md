@@ -36,7 +36,7 @@
 
 **Tools:** `adduser`, `su`, `mkdir`, `touch`, `cp`, `mv`, `rm`, `ls`, `tree`
 
-👉 **[View Full Lab Notes](./Linux_Lab_01_Organise_and_Maintain_a_Project_Workspace.md)**
+👉 **<a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_01_Organise_and_Maintain_a_Project_Workspace.md">View Full Lab Notes</a>**
 
 ---
 
@@ -57,7 +57,7 @@
 
 **Tools:** `df`, `du`, `find`, `fallocate`, `dd`, `tar`, `crontab`, `systemctl`
 
-👉 **[View Full Lab Notes](./Linux_Lab_02_Investigate_and_Respond_to_a_Disk_Space_Alert.md)**
+👉 **<a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_02_Investigate_and_Respond_to_a_Disk_Space_Alert.md">View Full Lab Notes**
 
 ---
 
