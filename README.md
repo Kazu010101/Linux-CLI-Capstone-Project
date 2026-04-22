@@ -14,7 +14,7 @@
 | 02 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_02_Investigate_and_Respond_to_a_Disk_Space_Alert.md">Investigate and Respond to a Disk Space Alert| Disk monitoring, archiving, cron |
 | 03 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_03_Secure_Multi-User_Collaboration_Environment.md">Secure Multi User Collaboration Environment | chmod, SGID, group-based access control |
 | 04 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_04_Network_Diagnostics_and_Firewall_Recovery.md">Network Diagnostics and Firewall Recovery | OSI triage, ufw, iptables |
-| 05 | [Bash Scripting for Automation](#-lab-05--bash-scripting-for-automation) | Bash scripting, error handling, crontab | 
+| 05 | <a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_05_Bash_Scripting_for_Automation.md">Bash Scripting for Automation | Bash scripting, error handling, crontab | 
 
 📎 **[Linux CLI Cheatsheet](./Linux_CLI_Cheatsheet.md)** — consolidated command reference across all labs
 
@@ -79,7 +79,7 @@
 
 **Tools:** `adduser`, `groupadd`, `usermod -aG`, `chgrp`, `chmod`, `su`, `getfacl`
 
-👉 **[View Full Lab Notes](./Linux_Lab_03_Secure_Multi-User_Collaboration_Environment.md)**
+👉 **<a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_03_Secure_Multi-User_Collaboration_Environment.md">View Full Lab Notes**
 
 ---
 
@@ -102,7 +102,7 @@
 
 **Tools:** `ifconfig`, `ip addr`, `ip neigh`, `ip route`, `ping`, `dig`, `traceroute`, `ufw`, `iptables`
 
-👉 **[View Full Lab Notes](./Linux_Lab_04_Network_Diagnostics_and_Firewall_Recovery.md)**
+👉 **<a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_04_Network_Diagnostics_and_Firewall_Recovery.md">View Full Lab Notes**
 
 ---
 
@@ -124,7 +124,7 @@
 
 **Tools:** `bash`, `touch`, `nano`, `chmod`, `tar`, `date`, `awk`, `echo`, `crontab`
 
-👉 **[View Full Lab Notes](./Linux_Lab_05_Bash_Scripting_for_Automation.md)**
+👉 **<a href="https://github.com/Kazu010101/Linux-CLI-Capstone-Project/blob/main/Linux_Lab_05_Bash_Scripting_for_Automation.md">View Full Lab Notes**
 
 ---
 
