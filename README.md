@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Lab Overview
+## Lab Overview
 
 | # | Lab | Key Skills |
 |---|-----|-----------|
@@ -20,7 +20,7 @@
 
 ---
 
-## 📁 Lab 01 – Organise and Maintain a Project Workspace
+## Lab 01 – Organise and Maintain a Project Workspace
 
 **Scenario:** Set up and maintain a structured project workspace for the software engineering team at NovaStack, using only Linux CLI file management commands.
 
@@ -40,7 +40,7 @@
 
 ---
 
-## 💾 Lab 02 – Investigate and Respond to a Disk Space Alert
+## Lab 02 – Investigate and Respond to a Disk Space Alert
 
 **Scenario:** A disk space alert has fired. Identify the largest directories, archive large files to free space, and set up an automated daily disk usage report.
 
@@ -61,7 +61,7 @@
 
 ---
 
-## 🔐 Lab 03 – Secure Multi-User Collaboration Environment
+## Lab 03 – Secure Multi-User Collaboration Environment
 
 **Scenario:** Configure a shared `/opt/shared/projects/` directory so the frontend team (alice, bob) and backend team (carol) each have full access to their own subdirectory but are completely blocked from the other's.
 
@@ -83,7 +83,7 @@
 
 ---
 
-## 🌐 Lab 04 – Network Diagnostics and Firewall Recovery
+## Lab 04 – Network Diagnostics and Firewall Recovery
 
 **Scenario:** A staging server cannot reach the internet. Troubleshoot the problem layer-by-layer and fix the firewall misconfiguration that is blocking all outbound traffic.
 
@@ -106,7 +106,7 @@
 
 ---
 
-## 🤖 Lab 05 – Bash Scripting for Automation
+## Lab 05 – Bash Scripting for Automation
 
 **Scenario:** Write a Bash script to automate daily backups of the documentation folder, name archives with the current date, log all operations, and schedule it via cron.
 
@@ -128,7 +128,7 @@
 
 ---
 
-## 🔧 Tools & Technologies Used
+## Tools & Technologies Used
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
@@ -147,9 +147,9 @@
 
 ---
 
-## 📎 Quick Reference
+## Quick Reference
 
-📄 **[Linux CLI Cheatsheet](./Linux_CLI_Cheatsheet.md)** — all commands from every lab in one place, organised by category
+ **[Linux CLI Cheatsheet](./Linux_CLI_Cheatsheet.md)** — all commands from every lab in one place, organised by category
 
 ---
 
